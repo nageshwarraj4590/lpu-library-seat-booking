@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPU Library Seat Booking System</title>
+  <link rel="stylesheet" href="style .css">
+</head>
+<body>
+
+  <!-- ========== 1. HEADER / NAVBAR ========== -->
+  <header class="navbar">
+    <a href="#home" class="logo">&#128218; LPU Library</a>
+
+    <!-- Menu button: visible only on mobile -->
+    <button id="menuButton" class="menu-button" type="button">&#9776;</button>
+
+    <nav id="navLinks" class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#areas">Library Areas</a>
+      <a href="#booking">Book a Seat</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ========== 2. HERO SECTION ========== -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Welcome to LPU Library</h1>
+      <p>Find your perfect study space and book your library seat easily.</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </section>
+
+  <!-- ========== 3. LIBRARY AREAS (4 CARDS) ========== -->
+  <section id="areas" class="section">
+    <h2>Library Areas</h2>
+    <p class="section-note">Choose the space that suits the way you study.</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <img src="images/reading-hall.jpg" alt="Reading Hall">
+        <div class="card-body">
+          <h3>Reading Hall</h3>
+          <p>A peaceful place for individual study.</p>
+          <a href="#seats" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/digital-library.jpg" alt="Digital Library">
+        <div class="card-body">
+          <h3>Digital Library</h3>
+          <p>A computer-based learning space for students.</p>
+          <a href="#seats" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/quiet-study.jpg" alt="Quiet Study Area">
+        <div class="card-body">
+          <h3>Quiet Study Area</h3>
+          <p>A dedicated space for focused learning and revision.</p>
+          <a href="#seats" class="btn">Book Now</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/group-discussion.jpg" alt="Group Discussion Area">
+        <div class="card-body">
+          <h3>Group Discussion Area</h3>
+          <p>A space for students to work together on projects and assignments.</p>
+          <a href="#groups" class="btn">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 4. SEAT AVAILABILITY ========== -->
+  <section id="seats" class="section light">
+    <h2>Seat Availability</h2>
+    <p class="section-note">Click on a green seat to select it. Red seats are already booked.</p>
+
+    <!-- Colour guide -->
+    <div class="legend">
+      <span><i class="dot green"></i> Available</span>
+      <span><i class="dot red"></i> Booked</span>
+      <span><i class="dot blue"></i> Selected</span>
+    </div>
+
+    <div class="seat-areas">
+
+      <!-- Reading Hall -->
+      <div class="seat-box">
+        <h3>Reading Hall</h3>
+        <div class="seat-grid">
+          <input type="radio" name="seat" id="r1" value="Reading Hall - Seat 1"><label for="r1">1</label>
+          <input type="radio" name="seat" id="r2" value="Reading Hall - Seat 2"><label for="r2">2</label>
+          <input type="radio" name="seat" id="r3" disabled><label for="r3">3</label>
+          <input type="radio" name="seat" id="r4" disabled><label for="r4">4</label>
+          <input type="radio" name="seat" id="r5" value="Reading Hall - Seat 5"><label for="r5">5</label>
+          <input type="radio" name="seat" id="r6" value="Reading Hall - Seat 6"><label for="r6">6</label>
+          <input type="radio" name="seat" id="r7" value="Reading Hall - Seat 7"><label for="r7">7</label>
+          <input type="radio" name="seat" id="r8" value="Reading Hall - Seat 8"><label for="r8">8</label>
+          <input type="radio" name="seat" id="r9" disabled><label for="r9">9</label>
+          <input type="radio" name="seat" id="r10" value="Reading Hall - Seat 10"><label for="r10">10</label>
+          <input type="radio" name="seat" id="r11" value="Reading Hall - Seat 11"><label for="r11">11</label>
+          <input type="radio" name="seat" id="r12" disabled><label for="r12">12</label>
+          <input type="radio" name="seat" id="r13" value="Reading Hall - Seat 13"><label for="r13">13</label>
+          <input type="radio" name="seat" id="r14" value="Reading Hall - Seat 14"><label for="r14">14</label>
+          <input type="radio" name="seat" id="r15" value="Reading Hall - Seat 15"><label for="r15">15</label>
+        </div>
+      </div>
+
+      <!-- Digital Library -->
+      <div class="seat-box">
+        <h3>Digital Library</h3>
+        <div class="seat-grid">
+          <input type="radio" name="seat" id="d1" value="Digital Library - Seat 1"><label for="d1">1</label>
+          <input type="radio" name="seat" id="d2" disabled><label for="d2">2</label>
+          <input type="radio" name="seat" id="d3" value="Digital Library - Seat 3"><label for="d3">3</label>
+          <input type="radio" name="seat" id="d4" value="Digital Library - Seat 4"><label for="d4">4</label>
+          <input type="radio" name="seat" id="d5" value="Digital Library - Seat 5"><label for="d5">5</label>
+          <input type="radio" name="seat" id="d6" disabled><label for="d6">6</label>
+          <input type="radio" name="seat" id="d7" disabled><label for="d7">7</label>
+          <input type="radio" name="seat" id="d8" value="Digital Library - Seat 8"><label for="d8">8</label>
+          <input type="radio" name="seat" id="d9" value="Digital Library - Seat 9"><label for="d9">9</label>
+          <input type="radio" name="seat" id="d10" value="Digital Library - Seat 10"><label for="d10">10</label>
+          <input type="radio" name="seat" id="d11" value="Digital Library - Seat 11"><label for="d11">11</label>
+          <input type="radio" name="seat" id="d12" value="Digital Library - Seat 12"><label for="d12">12</label>
+          <input type="radio" name="seat" id="d13" disabled><label for="d13">13</label>
+          <input type="radio" name="seat" id="d14" value="Digital Library - Seat 14"><label for="d14">14</label>
+          <input type="radio" name="seat" id="d15" value="Digital Library - Seat 15"><label for="d15">15</label>
+        </div>
+      </div>
+
+      <!-- Quiet Study Area -->
+      <div class="seat-box">
+        <h3>Quiet Study Area</h3>
+        <div class="seat-grid">
+          <input type="radio" name="seat" id="q1" disabled><label for="q1">1</label>
+          <input type="radio" name="seat" id="q2" value="Quiet Study Area - Seat 2"><label for="q2">2</label>
+          <input type="radio" name="seat" id="q3" value="Quiet Study Area - Seat 3"><label for="q3">3</label>
+          <input type="radio" name="seat" id="q4" value="Quiet Study Area - Seat 4"><label for="q4">4</label>
+          <input type="radio" name="seat" id="q5" disabled><label for="q5">5</label>
+          <input type="radio" name="seat" id="q6" value="Quiet Study Area - Seat 6"><label for="q6">6</label>
+          <input type="radio" name="seat" id="q7" value="Quiet Study Area - Seat 7"><label for="q7">7</label>
+          <input type="radio" name="seat" id="q8" value="Quiet Study Area - Seat 8"><label for="q8">8</label>
+          <input type="radio" name="seat" id="q9" value="Quiet Study Area - Seat 9"><label for="q9">9</label>
+          <input type="radio" name="seat" id="q10" disabled><label for="q10">10</label>
+          <input type="radio" name="seat" id="q11" value="Quiet Study Area - Seat 11"><label for="q11">11</label>
+          <input type="radio" name="seat" id="q12" value="Quiet Study Area - Seat 12"><label for="q12">12</label>
+          <input type="radio" name="seat" id="q13" value="Quiet Study Area - Seat 13"><label for="q13">13</label>
+          <input type="radio" name="seat" id="q14" disabled><label for="q14">14</label>
+          <input type="radio" name="seat" id="q15" value="Quiet Study Area - Seat 15"><label for="q15">15</label>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="section-note">After choosing a seat, type its area and number in the booking form below.</p>
+  </section>
+
+  <!-- ========== 5. GROUP DISCUSSION AREA ========== -->
+  <section id="groups" class="section">
+    <h2>Group Discussion Area</h2>
+    <p class="section-note">Pick a table that fits the size of your group.</p>
+
+    <div class="table-grid">
+
+      <div class="table-card">
+        <h3>Discussion Table 1</h3>
+        <p>4 Students</p>
+        <span class="status available">Available</span>
+        <a href="#booking" class="btn">Book Now</a>
+      </div>
+
+      <div class="table-card">
+        <h3>Discussion Table 2</h3>
+        <p>4 Students</p>
+        <span class="status booked">Booked</span>
+        <a href="#booking" class="btn">Book Now</a>
+      </div>
+
+      <div class="table-card">
+        <h3>Discussion Table 3</h3>
+        <p>6 Students</p>
+        <span class="status available">Available</span>
+        <a href="#booking" class="btn">Book Now</a>
+      </div>
+
+      <div class="table-card">
+        <h3>Discussion Table 4</h3>
+        <p>6 Students</p>
+        <span class="status booked">Booked</span>
+        <a href="#booking" class="btn">Book Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 6. BOOKING FORM ========== -->
+  <section id="booking" class="section light">
+    <h2>Book a Seat</h2>
+    <p class="section-note">Fill in all the details and press Confirm Booking.</p>
+
+    <!-- novalidate = let our own JavaScript check the fields -->
+    <form id="bookingForm" class="form" novalidate>
+
+      <label for="studentName">Student Name</label>
+      <input type="text" id="studentName" placeholder="Enter your full name">
+
+      <label for="regNo">Registration Number</label>
+      <input type="text" id="regNo" placeholder="Example: 12345678">
+
+      <label for="area">Library Area</label>
+      <select id="area">
+        <option value="">-- Select an area --</option>
+        <option>Reading Hall</option>
+        <option>Digital Library</option>
+        <option>Quiet Study Area</option>
+        <option>Group Discussion Area</option>
+      </select>
+
+      <label for="seatNo">Seat Number or Discussion Table</label>
+      <input type="text" id="seatNo" placeholder="Example: Seat 7 or Table 3">
+
+      <label for="bookingDate">Booking Date</label>
+      <input type="date" id="bookingDate">
+
+      <label for="timeSlot">Time Slot</label>
+      <select id="timeSlot">
+        <option value="">-- Select a time slot --</option>
+        <option>9:00 AM - 11:00 AM</option>
+        <option>11:00 AM - 1:00 PM</option>
+        <option>2:00 PM - 4:00 PM</option>
+        <option>4:00 PM - 6:00 PM</option>
+      </select>
+
+      <p id="message"></p>
+
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!-- ========== 7. ABOUT SECTION ========== -->
+  <section id="about" class="section">
+    <h2>About LPU Library Booking System</h2>
+    <div class="about-box">
+      <p>
+        This project helps students explore different library areas and provides a simple way
+        to request a library seat or group discussion table booking.
+      </p>
+      <h3>Problem Statement</h3>
+      <p>
+        Students sometimes face difficulty finding available library seats. This website provides
+        an easy interface to explore library spaces and submit booking requests.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== 8. CONTACT SECTION ========== -->
+  <section id="contact" class="section light">
+    <h2>Contact</h2>
+    <div class="about-box">
+      <p><strong>Project Name:</strong> LPU Library Seat Booking System</p>
+      <p><strong>College:</strong> Lovely Professional University</p>
+      <p><strong>Course:</strong> CSE326</p>
+
+      <h3>Team Members</h3>
+      <!-- EDIT HERE: change the names and registration numbers -->
+      <ul>
+        <li>Student Name 1: Nageshwar Raj</li>
+        <li>Student Name 2: Shaik Gouse Lazam</li>
+        <li>Student Name 3: Rohit Kumar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========== 9. FOOTER ========== -->
+  <footer class="footer">
+    <p><strong>LPU Library Seat Booking System</strong></p>
+    <p>Academic Project - CSE326</p>
+    <p>Lovely Professional University</p>
+    <p>&copy; 2026 LPU Library Seat Booking System. All rights reserved.</p>
+  </footer>
+
+  <script src="script .js"></script>
+</body>
+</html>

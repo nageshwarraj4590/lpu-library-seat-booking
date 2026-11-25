@@ -1,0 +1,436 @@
+/* ===== 1. COLOURS (stored in variables so we can reuse them) ===== */
+:root {
+  --navy: #0b2a5b;
+  --yellow: #ffc933;
+  --white: #ffffff;
+  --light: #f3f6fb;
+  --text: #22304a;
+  --green: #2e9e5b;
+  --red: #d64545;
+  --blue: #2f6fed;
+}
+
+/* ===== 2. BASIC SETTINGS ===== */
+* {
+  box-sizing: border-box;   /* padding does not increase the width */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;  /* smooth scrolling when a menu link is clicked */
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== 3. NAVBAR ===== */
+.navbar {
+  background: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  position: sticky;         /* navbar stays at the top while scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--yellow);
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 24px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--yellow);
+}
+
+.menu-button {
+  display: none;            /* hidden on big screens */
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ===== 4. HERO SECTION ===== */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  /* dark blue layer on top of the photo so the text is easy to read */
+  background:
+    linear-gradient(rgba(11, 42, 91, 0.75), rgba(11, 42, 91, 0.75)),
+    url("images/hero.jpg") center / cover no-repeat;
+  background-color: var(--navy);
+}
+
+.hero-text {
+  max-width: 700px;
+  color: var(--white);
+  animation: fadeIn 1.2s ease;   /* the only page-load animation */
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== 5. BUTTONS ===== */
+.btn {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--navy);
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px;      /* rounded corners */
+  padding: 10px 26px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  background: var(--navy);
+  color: var(--yellow);
+  transform: scale(1.05);
+}
+
+/* ===== 6. GENERAL SECTION STYLE ===== */
+.section {
+  padding: 70px 40px;
+  text-align: center;
+  scroll-margin-top: 70px;  /* stops the sticky navbar from hiding the heading */
+}
+
+.section.light {
+  background: var(--light);
+}
+
+.section h2 {
+  color: var(--navy);
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.section-note {
+  margin-bottom: 30px;
+}
+
+/* ===== 7. LIBRARY AREA CARDS ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;        /* photo fills the box without stretching */
+  display: block;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  margin-bottom: 16px;
+  min-height: 52px;
+}
+
+/* ===== 8. SEAT LAYOUT ===== */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.dot.green { background: var(--green); }
+.dot.red   { background: var(--red); }
+.dot.blue  { background: var(--blue); }
+
+.seat-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1050px;
+  margin: 0 auto 30px;
+}
+
+.seat-box {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.seat-box h3 {
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);   /* 5 seats in a row, 3 rows = 15 seats */
+  gap: 10px;
+}
+
+/* The round radio button is hidden. We style its label as a seat. */
+.seat-grid input {
+  position: absolute;
+  opacity: 0;
+}
+
+.seat-grid label {
+  background: var(--green);                /* default = Available */
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.seat-grid label:hover {
+  transform: scale(1.1);
+}
+
+/* When the radio button is clicked, its label turns blue */
+.seat-grid input:checked + label {
+  background: var(--blue);
+}
+
+/* A disabled radio button = Booked seat, shown in red */
+.seat-grid input:disabled + label {
+  background: var(--red);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Outline for keyboard users (Tab key) */
+.seat-grid input:focus-visible + label {
+  outline: 3px solid var(--yellow);
+}
+
+/* ===== 9. GROUP DISCUSSION TABLES ===== */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.table-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s;
+}
+
+.table-card:hover {
+  transform: translateY(-6px);
+}
+
+.table-card h3 {
+  color: var(--navy);
+}
+
+.table-card p {
+  margin-bottom: 12px;
+}
+
+.status {
+  display: inline-block;
+  color: var(--white);
+  font-size: 0.9rem;
+  border-radius: 12px;
+  padding: 3px 14px;
+  margin-bottom: 16px;
+}
+
+.status.available { background: var(--green); }
+.status.booked    { background: var(--red); }
+
+/* ===== 10. BOOKING FORM ===== */
+.form {
+  background: var(--white);
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  text-align: left;
+}
+
+.form label {
+  display: block;
+  font-weight: bold;
+  color: var(--navy);
+  margin: 14px 0 4px;
+}
+
+.form input,
+.form select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccd5e5;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form input:focus,
+.form select:focus {
+  outline: none;
+  border-color: var(--navy);
+}
+
+#message {
+  margin-top: 14px;
+  font-weight: bold;
+}
+
+#message.error {
+  color: var(--red);
+}
+
+.form .btn {
+  margin-top: 18px;
+  width: 100%;
+}
+
+/* ===== 11. ABOUT AND CONTACT ===== */
+.about-box {
+  max-width: 700px;
+  margin: 20px auto 0;
+  text-align: left;
+}
+
+.about-box h3 {
+  color: var(--navy);
+  margin: 20px 0 6px;
+}
+
+.about-box p {
+  margin-bottom: 8px;
+}
+
+.about-box ul {
+  margin-left: 22px;
+}
+
+/* ===== 12. FOOTER ===== */
+.footer {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer strong {
+  color: var(--yellow);
+}
+
+/* ===== 13. MOBILE VIEW (screens smaller than 768px) ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;          /* menu is hidden until the button is clicked */
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;          /* JavaScript adds the class "open" */
+  }
+
+  .nav-links a {
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+}
+
+/* People who turn off animations in their phone settings will not see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
